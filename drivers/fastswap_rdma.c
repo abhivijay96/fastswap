@@ -107,7 +107,7 @@ static int sswap_rdma_create_qp(struct rdma_queue *queue)
   init_attr.send_cq = queue->cq;
   init_attr.recv_cq = queue->cq;
   /* just to check if we are compiling against the right headers */
-  init_attr.create_flags = IB_QP_EXP_CREATE_ATOMIC_BE_REPLY & 0;
+  init_attr.create_flags = 0;
 
   ret = rdma_create_qp(queue->cm_id, rdev->pd, &init_attr);
   if (ret) {

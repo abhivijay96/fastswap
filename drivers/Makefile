@@ -1,4 +1,4 @@
-OFA_DIR ?= /usr/src/ofa_kernel/default
+OFA_DIR ?= /usr/src/ofa_kernel/4.11.0hyperd
 OFA_INCLUDE := $(OFA_DIR)/include
 OFA_SYMVERS := $(OFA_DIR)/Module.symvers
 
