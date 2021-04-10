@@ -467,7 +467,7 @@ static void sswap_rdma_read_done(struct ib_cq *cq, struct ib_wc *wc)
 inline static int sswap_rdma_post_rdma(struct rdma_queue *q, struct rdma_req *qe,
   struct ib_sge *sge, u64 roffset, enum ib_wr_opcode op)
 {
-  struct ib_send_wr *bad_wr;
+  const struct ib_send_wr *bad_wr;
   struct ib_rdma_wr rdma_wr = {};
   int ret;
 
@@ -519,7 +519,7 @@ static void sswap_rdma_recv_remotemr_done(struct ib_cq *cq, struct ib_wc *wc)
 static int sswap_rdma_post_recv(struct rdma_queue *q, struct rdma_req *qe,
   size_t bufsize)
 {
-  struct ib_recv_wr *bad_wr;
+  const struct ib_recv_wr *bad_wr;
   struct ib_recv_wr wr = {};
   struct ib_sge sge;
   int ret;
